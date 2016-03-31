@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+<head>
+    <title>Musician list</title>
+</head>
+<body>
+    <table>
+    <tr><th>PROJECT</th><th>VERSION</th><th>DEPENDS</th></tr>
+    {% for project in projects %}
+        <tr>
+            <td>{{ project.project }}</td>
+            <td>{{ project.version }}</td>
+
+            {% for bug in project.buglist %}
+                <td><a href="{{ bug.linked }}"> {{ bug.ID }} {{bug.owner}}</a></td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>

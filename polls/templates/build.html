@@ -1,0 +1,19 @@
+
+<form action="/build/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+
+    <select id="id_field2" name="field2">
+        <option value="obj1.name">Object1</option>
+        <option value="obj2.name">Object2</option>
+    </select>
+
+    <input id="site" list="siteChoices"/>
+    <datalist id="siteChoices">
+        <option label="hangge.com" value="hangge.com"/>
+        <option label="baidu.com" value="baidu.com"/>
+        <option label="google.com" value="google.com"/>
+        <option label="haha.com" value="haha.com"/>
+    </datalist>
+</form>
